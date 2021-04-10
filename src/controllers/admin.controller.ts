@@ -42,16 +42,16 @@ export const createLearner = (req:Request,res:Response)=>{
 
 export const addLearner = (req: Request, res: Response)=>{
 
-    
+    const {learner,courseId}=req.body
 
-    Course.updateOne({"_id":req.params.courseId},{$push:{
-        learners: req.body.learner
+    Course.updateOne({"_id":courseId},{$push:{
+        learners: learner
     }})
     .then((result)=>{
         res.json(result)
 
-        Learner.updateOne({"_id":req.body.learner},{$push:{
-            courses: req.params.courseId
+        Learner.updateOne({"_id":learner},{$push:{
+            courses: courseId
         }})
 
     })

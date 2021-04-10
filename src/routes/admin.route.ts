@@ -9,7 +9,7 @@ router
 .post("/create/course",createCourse)
 .post("/create/learner",createLearner)
 
-.post("/addlearner/:courseId",addLearner )
+.post("/addlearner/",addLearner )
 
     
 

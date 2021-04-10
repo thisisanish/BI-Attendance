@@ -7,7 +7,7 @@ router
 
 .get("/",getCourses)
 
-.post("/mark/:courseId",createAttendance)
+.post("/mark/",createAttendance)
 
 
 

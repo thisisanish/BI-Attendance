@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose, { Schema } from 'mongoose'
 
 const courseSchema = new mongoose.Schema({
     name:{
@@ -17,25 +17,9 @@ const courseSchema = new mongoose.Schema({
     ],
     
     attendance: [
-        {
-            date:{
-                type:Date,
-                default: Date.now()
-            },
-            
-            record:[
-                {
-                    studentId: {
-                        type: mongoose.Schema.Types.ObjectId,
-                        ref: 'Learner'
-                    },
-                    status:{
-                        type:Boolean
-                    }
-                }
-                
-            ]
-
+        { 
+            type :mongoose.Schema.Types.ObjectId,
+            ref: "Record"
         }
     ]
 })
