@@ -1,4 +1,8 @@
 import mongoose,{model, Schema} from 'mongoose'
+import {IRecord} from '../interfaces/record.interface'
+
+
+
 
 const recordSchema = new Schema ({
     record:[
@@ -20,4 +24,4 @@ const recordSchema = new Schema ({
     timestamps:true
 })
 
-export default mongoose.model("Record",recordSchema)
+export default mongoose.model<IRecord>("Record",recordSchema)

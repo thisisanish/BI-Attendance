@@ -1,27 +1,29 @@
-import mongoose, { Schema } from 'mongoose'
+import  { Schema, model, Model, Document } from 'mongoose'
 
-const courseSchema = new mongoose.Schema({
+import {ICourse} from "../interfaces/course.interface"
+
+const courseSchema = new Schema({
     name:{
         type:String,
         required:true,
     },
     coach:{
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Learner'
     },
     learners:[
         {
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'Learner'
         },
     ],
     
     attendance: [
         { 
-            type :mongoose.Schema.Types.ObjectId,
+            type :Schema.Types.ObjectId,
             ref: "Record"
         }
     ]
 })
-
-export default mongoose.model('Course',courseSchema)
+const Course : Model<ICourse> = model('Course',courseSchema)
+export default Course
