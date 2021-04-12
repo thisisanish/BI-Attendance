@@ -1,8 +1,8 @@
-import {Document, Schema} from 'mongoose'
+import {Document} from 'mongoose'
 import { ILearner } from './learner.interface';
 
 export interface IEachRecord extends Document{
-    studentId: Schema.Types.ObjectId | ILearner,
+    studentId: ILearner,
     status:Boolean,
     date: Date
 }

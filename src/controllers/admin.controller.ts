@@ -5,7 +5,7 @@ import { ILearner } from "../interfaces/learner.interface";
 
 export const getCourses = (req: Request, res: Response) => {
     Course.find()
-        .populate("learners")
+        // .populate("learners")
         .then((result) => {
             res.json(result);
         })

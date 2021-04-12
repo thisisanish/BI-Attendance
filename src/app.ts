@@ -14,7 +14,7 @@ mongoose.connect("mongodb+srv://thisisanish:strongpassword@cluster0.oduzp.mongod
     console.log(`\😁 Connected to the Database`);
     
 }).catch((err)=>{
-    console.log(`😭 Database Connection Unsuccessful \n `);
+    console.log(`😭 Database Connection Unsuccessful \n ${err}`);
     
 })
 
